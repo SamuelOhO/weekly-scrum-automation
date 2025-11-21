@@ -1,0 +1,24 @@
+{
+  "name": "poc-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "proxy": "node proxy/server.mjs"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "dotenv": "^17.2.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
