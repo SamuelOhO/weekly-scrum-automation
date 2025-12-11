@@ -7,7 +7,11 @@ export default defineConfig({
     host: true,
     port: 5174,
     proxy: {
-      "/api/claude": {
+      "/api/solar": {
+        target: "http://localhost:8787",
+        changeOrigin: true,
+      },
+      "/api/ocr": {
         target: "http://localhost:8787",
         changeOrigin: true,
       },

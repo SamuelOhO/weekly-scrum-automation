@@ -42,7 +42,30 @@ export function EntryList({ entries, onEdit, onDelete }: EntryListProps) {
                 </button>
               </div>
             </div>
+            {(entry.images?.length ?? 0) > 0 && (
+              <div className="pill" style={{ background: "#f0f4ff", color: "#1f4b99" }}>
+                이미지 {entry.images?.length}개 첨부됨
+              </div>
+            )}
             <div>{entry.text}</div>
+            {(entry.images?.length ?? 0) > 0 && (
+              <div className="image-grid">
+                {entry.images?.map((img) => (
+                  <div key={img.id} className="image-thumb">
+                    <div className="image-thumb-inner">
+                      <img
+                        src={img.dataUrl}
+                        alt={img.name ?? "첨부 이미지"}
+                        className="image-thumb-img"
+                      />
+                    </div>
+                    <div className="muted" style={{ fontSize: 12, wordBreak: "break-all" }}>
+                      {img.name ?? "첨부"}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
